@@ -6,7 +6,9 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-class.js';
 
 async function loadPage(){
-    try {await new Promise((resolve, reject)=>{
+    try {
+        await loadProductsFetch();
+        await new Promise((resolve, reject)=>{
         loadCart(()=>{
             // reject('error')
             resolve();
